@@ -1,0 +1,33 @@
+.header {
+    width: 100%;
+    background-color: RoyalBlue;
+}
+
+.header_wrap {
+    margin: 0px 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_app {
+    display: flex;
+    gap: 10px;
+}
+
+.header_app input {
+    border-radius: 6px;
+    outline: none;
+    padding: 6px;
+    border: none;
+}
+
+.header_btn_filter {
+    background-color: RoyalBlue;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
