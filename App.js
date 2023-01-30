@@ -8,17 +8,8 @@ function App() {
   const [data, setData] = useState([]);
   const getData = async () => {
     try {
-      const res = await axios.get(
-        'https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_250_BEST_FILMS&page=1',
-        {
-          method: 'GET',
-          headers: {
-            'X-API-KEY': 'e554be46-768b-46a0-b699-f1cbc44e8722',
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      setData(res.data.films);
+      const res = await axios.get('https://rickandmortyapi.com/api/character');
+      setData(res.data.results);
     } catch (err) {}
   };
 
@@ -26,7 +17,7 @@ function App() {
     getData();
   }, []);
 
-  // console.log(data[0]);
+  console.log(data[0]);
 
   return (
     <div className="App">
@@ -35,11 +26,11 @@ function App() {
         {data.map((item) => (
           <li className="cards" key={item.id}>
             <Card
-              name={item.nameRu}
-              image={item.posterUrlPreview}
+              name={item.name}
+              image={item.image}
               year={item.year}
-              rating={item.rating}
-              genre={item.genres[0].genre}
+              rating={item.species}
+              // genre={item[index].genres[0]}?
             />
           </li>
         ))}
